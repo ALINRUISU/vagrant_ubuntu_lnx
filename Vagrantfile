@@ -4,9 +4,9 @@
 Vagrant.configure("2") do |config|
     config.vm.box = "generic/ubuntu1810"
  
-    config.vm.define :nios do |nios_config|
-        nios_config.vm.hostname = 'ubuntu1810'
-        nios_config.vm.network "public_network", ip: "192.168.0.117"
+    config.vm.define :ubuntu do |ubuntu_config|
+        ubuntu_config.vm.hostname = 'ubuntu1810'
+        ubuntu_config.vm.network "public_network", ip: "192.168.0.117"
     end
  
     config.vm.provider :virtualbox do |virtualbox_config|

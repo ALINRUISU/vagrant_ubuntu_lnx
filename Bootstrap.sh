@@ -13,7 +13,7 @@ apt-get -y update
  
 # memcached #########################################################################
 echo -e "-- Installing additional packages\n"
-apt-get y memcached
+apt-get -y install memcached
 
 echo -e "-- Installing memcached Service\n"
 
