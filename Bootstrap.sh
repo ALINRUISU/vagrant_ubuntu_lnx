@@ -9,22 +9,16 @@ echo -e "-- ------------------ --\n"
  
 # BOX ##########################################################################
 echo -e "-- Updating packages list\n"
-Yum update -y
+apt-get -y update
  
-# Docker #########################################################################
+# memcached #########################################################################
 echo -e "-- Installing additional packages\n"
-yum install -y yum-utils > /dev/null 2>&1
-yum install -y device-mapper-persistent-data > /dev/null 2>&1
-yum install -y net-tools > /dev/null 2>&1
-yum install -y lvm2 > /dev/null 2>&1
+apt-get y memcached
 
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+echo -e "-- Installing memcached Service\n"
 
-echo -e "-- Installing Docker Service\n"
-yum install docker-ce -y
-
-systemctl enable docker.service
-systemctl start  docker.service
+systemctl enable memcached.service
+systemctl start  memcached.service
 # END ##########################################################################
 echo -e "-- ---------------- --"
 echo -e "-- END BOOTSTRAPING --"
